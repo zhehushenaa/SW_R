@@ -1,0 +1,90 @@
+
+html,body{
+ width:100%;
+ height:100%;
+ background-color: 	#7B68EE;
+}
+
+      .div_1{
+            text-align: center;
+            color: #0c040a;
+
+            font-size:larger;
+<!--            width: 1000px;-->
+            height: 1000px;
+            }
+
+
+
+
+
+.wrapper{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  # 三列，并三等分，用fr做单位，不会产生横向的滚动条
+  #grid-template-columns:1fr 2fr 2fr;
+  # 三列，二三列各占五份中的两份
+  grid-gap:7rem;
+  # 行间距，列间距都设为1rem
+  grid-auto-rows:minmax(90px,auto);
+  # 自动改变div高度
+}
+
+.wrapper div{
+  background:	#00FA9A;
+  padding:10rem;
+  text-align: center;
+  font-size:15px;
+  border-style: solid;
+border-color: #909090 ;
+     border-image: -webkit-linear-gradient( red, gray) 30 30;
+     border-image: -moz-linear-gradient( red, gray) 30 30;
+     border-image: linear-gradient( red, gray) 30 30;
+}
+
+.wrapper div:nth-child(odd){
+  background:#ddd;
+}
+
+.wrapper a{
+
+
+
+     text-align:center;
+     line-height:100%;
+     padding:2.8em;
+     font-size:30px;
+
+     font:16px Arial,sans-serif bold;
+     font-style:normal;
+     text-decoration:none;
+     margin:2px;
+     vertical-align:text-bottom;
+     zoom:1;
+     outline:none;
+     font-size-adjust:none;
+     font-stretch:normal;
+     border-radius:600px/150px;
+     box-shadow:0px 1px 2px rgba(0,0,0,0.2);
+     text-shadow:0px 1px 1px rgba(0,0,0,0.3);
+     color:#fefee9;
+     border:0.2px solid #2299ff;
+
+
+
+
+     background-repeat:repeat;
+     background-size:auto;
+     background-origin:padding-box;
+     background-clip:padding-box;
+     background-color:#3399ff;
+     background: linear-gradient(to bottom, #eeeff9 0%,#3399ff 100%);
+
+}
+
+
+.wrapper a:hover {
+    background: #268DFF;
+}
+
+

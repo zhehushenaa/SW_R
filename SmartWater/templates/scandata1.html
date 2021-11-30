@@ -1,0 +1,472 @@
+<!doctype html>
+{% load static %}
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="author"/>
+<title>水务信息平台</title>
+
+</head>
+<style>
+    div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+body{background:#FFF}
+
+h1{
+
+text-align:center;
+
+}
+
+</style>
+<body>
+
+
+<h1 style="margin-bottom:0;" >设备状态</h1></div>
+<!--<div id="menu" style="background-color:#FFD700;height:500px;width:400px;float:left;">-->
+
+<div id="menu" style="height:500px;width:400px;float:left;">
+<select id="select" multiple="true" size="20" form="false">
+    <optgroup label="第一分中心">
+        <option  onclick="f1();" value="Internet Explorer">文翔名苑水泵站</option>
+        <option onclick="f2();" value="Firefox">开源新都水泵站</option>
+    </optgroup>
+    <optgroup label="第二分中心">
+        <option  onclick="f3();"value="Internet Explorer">久耕小区水泵站</option>
+        <option onclick="f4();"value="Firefox">凯虹家园水泵站</option>
+    </optgroup>
+
+        <optgroup label="第三分中心">
+        <option onclick="f5();"value="Internet Explorer">银欣花苑水泵站</option>
+        <option onclick="f6();"value="Firefox">海伦新苑水泵站</option>
+            <option onclick="f7();"value="Firefox">虹口花园水泵站</option>
+   </optgroup>
+
+
+<!--    <option value="Chrome">Chrome</option>-->
+<!--    <option value="Opera">Opera</option>-->
+
+
+
+</select></div>
+<div id="content" style="background-color:#EEEEEE;height:500px;width:400px;float:left;">
+        <table width="400" border="1" id="tab1" style="display:none">
+ <tr>
+  <th align="left">设备ID</th>
+     <th align="right">设备电量</th>
+  <th align="right">供水状态</th>
+  <th align="right">加压状态</th>
+ </tr>
+ <tr>
+  <td align="left">123</td>
+     <td align="right">80%</td>
+
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+ <tr>
+  <td align="left">456</td>
+          <td align="right">80%</td>
+
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+ <tr>
+  <td align="left">789</td>
+          <td align="right">80%</td>
+
+  <td align="right">异常</td>
+  <td align="right">正常</td>
+ </tr>
+<!-- <tr>-->
+<!--  <th align="left">总计</th>-->
+<!--  <th align="right">$1001.50</th>-->
+<!--  <th align="right">$744.65</th>-->
+<!-- </tr>-->
+</table>
+
+        <table width="400" border="1" id="tab2"  style="display:none">
+ <tr>
+  <th align="left">设备ID</th>
+       <th align="right">设备电量</th>
+
+  <th align="right">供水状态</th>
+  <th align="right">加压状态</th>
+ </tr>
+ <tr>
+  <td align="left">q111</td>     <td align="right">80%</td>
+
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+ <tr>
+  <td align="left">q222</td>     <td align="right">80%</td>
+
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+ <tr>
+  <td align="left">q333</td>     <td align="right">80%</td>
+
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+<!-- <tr>-->
+<!--  <th align="left">总计</th>-->
+<!--  <th align="right">$1001.50</th>-->
+<!--  <th align="right">$744.65</th>-->
+<!-- </tr>-->
+
+</table>
+
+
+     <table width="400" border="1" id="tab3"  style="display:none">
+ <tr>
+  <th align="left">设备ID</th>
+       <th align="right">设备电量</th>
+
+  <th align="right">供水状态</th>
+  <th align="right">加压状态</th>
+ </tr>
+ <tr>
+  <td align="left">w123</td>     <td align="right">80%</td>
+
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+ <tr>
+  <td align="left">w222</td>  <td align="right">80%</td>
+
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+ <tr>
+  <td align="left">w333</td>  <td align="right">80%</td>
+
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+<!-- <tr>-->
+<!--  <th align="left">总计</th>-->
+<!--  <th align="right">$1001.50</th>-->
+<!--  <th align="right">$744.65</th>-->
+<!-- </tr>-->
+
+</table>
+     <table width="400" border="1" id="tab4"  style="display:none">
+ <tr>
+  <th align="left">设备ID</th>
+       <th align="right">设备电量</th>
+
+  <th align="right">供水状态</th>
+  <th align="right">加压状态</th>
+ </tr>
+ <tr>
+  <td align="left">w111</td>    <th align="right">80%</th>
+
+
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+ <tr>
+  <td align="left">w222</td>   <th align="right">80%</th>
+
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+ <tr>
+  <td align="left">w333</td>   <th align="right">80%</th>
+
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+<!-- <tr>-->
+<!--  <th align="left">总计</th>-->
+<!--  <th align="right">$1001.50</th>-->
+<!--  <th align="right">$744.65</th>-->
+<!-- </tr>-->
+
+</table>
+     <table width="400" border="1" id="tab5"  style="display:none">
+ <tr>
+  <th align="left">设备ID</th>
+       <th align="right">设备电量</th>
+
+  <th align="right">供水状态</th>
+  <th align="right">加压状态</th>
+ </tr>
+ <tr>
+  <td align="left">e111</td>    <td align="right">80%</td>
+
+
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+ <tr>
+  <td align="left">e222</td>   <td align="right">80%</td>
+
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+ <tr>
+  <td align="left">e333</td>   <td align="right">80%</td>
+
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+<!-- <tr>-->
+<!--  <th align="left">总计</th>-->
+<!--  <th align="right">$1001.50</th>-->
+<!--  <th align="right">$744.65</th>-->
+<!-- </tr>-->
+
+</table>
+     <table width="400" border="1" id="tab6"  style="display:none">
+ <tr>
+  <th align="left">设备ID</th>
+       <th align="right">设备电量</th>
+
+  <th align="right">供水状态</th>
+  <th align="right">加压状态</th>
+ </tr>
+ <tr>
+  <td align="left">r111</td>   <td align="right">80%</td>
+
+
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+ <tr>
+  <td align="left">r222</td>    <td align="right">80%</td>
+
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+ <tr>
+  <td align="left">r333</td>   <td align="right">80%</td>
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+<!-- <tr>-->
+<!--  <th align="left">总计</th>-->
+<!--  <th align="right">$1001.50</th>-->
+<!--  <th align="right">$744.65</th>-->
+<!-- </tr>-->
+
+</table>
+     <table width="400" border="1" id="tab7"  style="display:none">
+ <tr>
+  <th align="left">设备ID</th>
+       <th align="right">设备电量</th>
+  <th align="right">供水状态</th>
+  <th align="right">加压状态</th>
+ </tr>
+ <tr>
+  <td align="left">t111</td> <td align="right">80%</td>
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+ <tr>
+  <td align="left">t222</td> <td align="right">80%</td>
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+ <tr>
+  <td align="left">t333</td> <td align="right">80%</td>
+  <td align="right">正常</td>
+  <td align="right">正常</td>
+ </tr>
+<!-- <tr>-->
+<!--  <th align="left">总计</th>-->
+<!--  <th align="right">$1001.50</th>-->
+<!--  <th align="right">$744.65</th>-->
+<!-- </tr>-->
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+<!--<table border=1 id="tab1">-->
+<!--<tr>-->
+<!--<td>最初显示</td>-->
+<!--</tr>-->
+<!--</table>-->
+<!--<table border=1 id="tab2" style="display:none">-->
+<!--<tr>-->
+<!--<td>最初隐藏</td>-->
+<!--</tr>-->
+<!--</table>-->
+<br>
+<!--<input type="button" onclick="f1();" value="切换" />-->
+
+
+</body>
+
+<script type="text/javascript">
+function f1(){
+var tab1=document.getElementById("tab1");
+var tab2=document.getElementById("tab2");
+var tab3=document.getElementById("tab3");
+var tab4=document.getElementById("tab4");
+var tab5=document.getElementById("tab5");
+var tab6=document.getElementById("tab6");
+var tab7=document.getElementById("tab7");
+tab1.style.display = '';
+tab2.style.display = 'none';
+tab3.style.display = 'none';
+tab4.style.display = 'none';
+tab5.style.display = 'none';
+tab6.style.display = 'none';
+tab7.style.display = 'none';
+
+
+
+}
+
+function f2(){
+
+var tab1=document.getElementById("tab1");
+var tab2=document.getElementById("tab2");
+var tab3=document.getElementById("tab3");
+var tab4=document.getElementById("tab4");
+var tab5=document.getElementById("tab5");
+var tab6=document.getElementById("tab6");
+var tab7=document.getElementById("tab7");
+
+tab2.style.display = '';
+tab1.style.display = 'none';
+tab3.style.display = 'none';
+tab4.style.display = 'none';
+tab5.style.display = 'none';
+tab6.style.display = 'none';
+tab7.style.display = 'none';
+
+}
+
+function f3(){
+
+
+
+var tab1=document.getElementById("tab1");
+var tab2=document.getElementById("tab2");
+var tab3=document.getElementById("tab3");
+var tab4=document.getElementById("tab4");
+var tab5=document.getElementById("tab5");
+var tab6=document.getElementById("tab6");
+var tab7=document.getElementById("tab7");
+
+tab3.style.display = '';
+tab2.style.display = 'none';
+tab1.style.display = 'none';
+tab4.style.display = 'none';
+tab5.style.display = 'none';
+tab6.style.display = 'none';
+tab7.style.display = 'none';
+}
+function f4(){
+
+
+
+var tab1=document.getElementById("tab1");
+var tab2=document.getElementById("tab2");
+var tab3=document.getElementById("tab3");
+var tab4=document.getElementById("tab4");
+var tab5=document.getElementById("tab5");
+var tab6=document.getElementById("tab6");
+var tab7=document.getElementById("tab7");
+
+tab4.style.display = '';
+tab2.style.display = 'none';
+tab3.style.display = 'none';
+tab1.style.display = 'none';
+tab5.style.display = 'none';
+tab6.style.display = 'none';
+tab7.style.display = 'none';
+}
+function f5(){
+
+
+
+var tab1=document.getElementById("tab1");
+var tab2=document.getElementById("tab2");
+var tab3=document.getElementById("tab3");
+var tab4=document.getElementById("tab4");
+var tab5=document.getElementById("tab5");
+var tab6=document.getElementById("tab6");
+var tab7=document.getElementById("tab7");
+
+tab5.style.display = '';
+tab2.style.display = 'none';
+tab3.style.display = 'none';
+tab4.style.display = 'none';
+tab1.style.display = 'none';
+tab6.style.display = 'none';
+tab7.style.display = 'none';
+}
+function f6(){
+
+
+var tab1=document.getElementById("tab1");
+var tab2=document.getElementById("tab2");
+var tab3=document.getElementById("tab3");
+var tab4=document.getElementById("tab4");
+var tab5=document.getElementById("tab5");
+var tab6=document.getElementById("tab6");
+var tab7=document.getElementById("tab7");
+
+tab6.style.display = '';
+tab2.style.display = 'none';
+tab3.style.display = 'none';
+tab4.style.display = 'none';
+tab5.style.display = 'none';
+tab1.style.display = 'none';
+tab7.style.display = 'none';
+}
+function f7(){
+
+
+var tab1=document.getElementById("tab1");
+var tab2=document.getElementById("tab2");
+var tab3=document.getElementById("tab3");
+var tab4=document.getElementById("tab4");
+var tab5=document.getElementById("tab5");
+var tab6=document.getElementById("tab6");
+var tab7=document.getElementById("tab7");
+
+tab7.style.display = '';
+tab2.style.display = 'none';
+tab3.style.display = 'none';
+tab4.style.display = 'none';
+tab5.style.display = 'none';
+tab6.style.display = 'none';
+tab1.style.display = 'none';
+}
+
+
+
+</script>
+
+
+
+</html>

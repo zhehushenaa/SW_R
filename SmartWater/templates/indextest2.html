@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+{% load static %}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<!--	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->
+
+	<title>智慧水务系统</title>
+<!--	<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>-->
+<!--	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>-->
+<!--	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>-->
+<style type="text/css">
+body {
+	background: #1b1e24;
+}
+
+#info {
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	background:#fcf8e3;
+	border:1px solid  #fbeed5;
+	width:100%;
+	max-width:900px;
+	margin:0 auto 10px auto;
+	font-family:arial;
+	font-size:12px;
+}
+
+	#info .info-wrapper {
+		padding:10px;
+	}
+
+	#info a {
+		color:#c09853;
+		text-decoration:none;
+	}
+
+	#info p {
+		margin:5px 0 0 0;
+	}
+
+ul {
+	margin:0 auto;
+	padding:0;
+	list-style:none;
+	width: 1100px;
+}
+
+ul li {
+	float:left;
+	margin:20px 25px;
+}
+
+
+.shape {
+	width: 300px;
+	height: 300px;
+	position: relative;
+}
+
+	.shape .overlay {
+		display:block;
+		width: 310px;
+		height: 310px;
+		position: absolute;
+		top:-5px;
+		left:-5px;
+		-webkit-transform: scale(1,1);
+		-webkit-transition-timing-function: ease-out;
+		-webkit-transition-duration: 0.6s;
+		-moz-transform: scale(1,1);
+		-moz-transition-timing-function: ease-out;
+		-moz-transition-duration: 0.6s;
+		transform: scale(1,1);
+		transition-timing-function: ease-out;
+		transition-duration: 0.6s;
+		z-index:500;
+		/* allow user to actually perform actions underneath this layer */
+		pointer-events:none;
+		background-repeat: no-repeat;
+		outline:0;
+	}
+
+/* different shapes */
+.shape .overlay.round {
+	background: url(../static/images/bg/hexagon.png);
+}
+
+.shape .overlay.hexagon {
+	background: url(../static/images/bg/hexagon.png);
+}
+
+.shape .overlay.pentagon {
+	background: url(../static/images/bg/hexagon.png);
+}
+
+/* hover effect */
+.shape:hover .overlay {
+	-webkit-transform: scale(1.07,1.07);
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transition-duration: 0.3s;
+	-moz-transform: scale(1.07,1.07);
+	-moz-transition-timing-function: ease-out;
+	-moz-transition-duration: 0.3s;
+}
+
+
+.shape:hover .bg {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+  display:block;
+}
+
+.shape:hover .details {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  opacity: 1;
+	z-index:450;
+  display:block;
+}
+
+
+
+/* content styles */
+.shape .bg,
+.shape .details {
+	position: absolute;
+<!--	width: 300px;-->
+<!--	height:300px;-->
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	top:0;
+	left:0;
+	opacity:0;
+	-webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+	display:none;
+
+
+	  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  opacity: 1;
+	z-index:450;
+  display:block;
+}
+
+.shape .bg {
+	background: #4b5a78;
+}
+
+.shape .details span.heading {
+	font-family: 'Roboto Condensed', serif;
+	font-size:30px;
+	display:block;
+	margin-top:70px;
+	color:#fff;
+	text-decoration:none;
+}
+
+.shape .details p {
+	font-family: 'Abel', sans-serif;
+	color:#fff;
+	width: 70%;
+	font-size:14px;
+	margin:0 auto;
+}
+
+.shape a.button {
+	padding:5px 15px;
+	font-family: 'Abel', sans-serif;
+	font-size:12px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-ms-border-radius: 20px;
+	-o-border-radius: 20px;
+	border-radius: 20px;
+	background: #2f3644;
+	text-decoration:none;
+	color:#fff;
+	display:block;
+	width:50px;
+	margin:0 auto;
+	text-align:center;
+	margin-top:15px;
+}
+
+	.shape a.button:hover {
+		background: #fff;
+		color: #2f3644;
+	}
+</style>
+</head>
+<body>
+
+<ul>
+
+<li>
+
+<div class="shape">
+	<a href="#" class="overlay round"></a>
+
+	<div class="details">
+		<span class="heading">设备状态</span>
+		<hr />
+		<p>                                     设备状态                        </p>
+		<a href="http://sc.chinaz.com/" class="button">VIEW</a>
+	</div>
+
+	<div class="bg"></div>
+
+	<div class="base">
+		<img src="../static/images/1.jpg" alt="" />
+	</div>
+
+</div>
+
+</li>
+
+<li>
+
+<div class="shape">
+	<a href="#" class="overlay hexagon"></a>
+	<div class="details">
+		<span class="heading">IOS GAME</span>
+		<hr />
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+		<a href="#" class="button">VIEW</a>
+	</div>
+	<div class="bg"></div>	<div class="base">
+		<img src="../static/images/2.jpg" alt="" />
+	</div>
+</div>
+
+</li>
+
+<li>
+
+<div class="shape">
+	<a href="#"  class="overlay pentagon"></a>
+	<div class="details">
+		<span class="heading">KEEP ROCKING</span>
+		<hr />
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+		<a href="#" class="button">VIEW</a>
+	</div>
+	<div class="bg"></div>
+	<div class="base">
+		<img src="../static/images/3.jpg" alt="" />
+	</div>
+</div>
+
+</li>
+
+<li>
+
+<div class="shape">
+	<a href="#"  class="overlay round"></a>
+	<div class="details">
+		<span class="heading">GRAPH VISUAL</span>
+		<hr />
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+		<a href="#" class="button">VIEW</a>
+	</div>
+	<div class="bg"></div>
+	<div class="base">
+		<img src="../static/images/4.jpg" alt="" />
+	</div>
+</div>
+
+</li>
+
+<li>
+
+<div class="shape">
+	<a href="#"  class="overlay hexagon"></a>
+	<div class="details">
+		<span class="heading">UI KIT</span>
+		<hr />
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+		<a href="#" class="button">VIEW</a>
+	</div>
+	<div class="bg"></div>
+	<div class="base">
+		<img src="../static/images/5.jpg" alt="" />
+	</div>
+</div>
+
+</li>
+
+<li>
+
+<div class="shape">
+	<a href="#"  class="overlay pentagon"></a>
+	<div class="details">
+		<span class="heading">PEDALS</span>
+		<hr />
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+		<a href="#" class="button">VIEW</a>
+	</div>
+	<div class="bg"></div>
+	<div class="base">
+		<img src="../static/images/6.jpg" alt="" />
+	</div>
+</div>
+
+</li>
+
+</ul>
+<div style="text-align:center;clear:both">
+<p>ÊÊÓÃä¯ÀÀÆ÷£ºFireFox¡¢Chrome¡¢Safari¡¢Opera¡¢°ÁÓÎ¡¢ËÑ¹·. ²»Ö§³ÖIE8¡¢360¡¢ÊÀ½çÖ®´°¡£</p>
+<p>À´Ô´£º<a href="http://sc.chinaz.com/" target="_blank">Õ¾³¤ËØ²Ä</a></p>
+</div>
+</body>
+</html>
