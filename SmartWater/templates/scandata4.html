@@ -106,7 +106,7 @@ text-align:center;
 <body style="background-color:#87CEFA">
 
 
-<h1 style="margin-bottom:0;" >设备状态</h1>
+<h1 style="margin-bottom:0;" >水质状态</h1>
 <br>
 <br>
 <!--<div id="menu" style="background-color:#FFD700;height:500px;width:400px;float:left;">-->
@@ -138,69 +138,39 @@ text-align:center;
 <div id="content" width="800">
         <table width="1000" height="100" border="1" id="tab1" style="table-layout:fixed;background-color:#6495ED;display:none">
  <tr>
-     <th align="left">设备名称</th>
+     <th align="left">溶解氧(mg/L)</th>
 <!--     <th align="left">设备ID</th>-->
      <th align="right">温度(℃)</th>
-     <th align="right">气压(MPa)</th>
-    <th align="right">电源情况</th>
-     <th align="right">水位高度(m)</th>
+          <th align="right">余氯(mg/L)</th>
 
-     <th align="right">电压(v)</th>
-     <th align="right">电流(a)</th>
-     <th align="right">扬程(m)</th>
-     <th align="right">水流量(m³/h)</th>
+    <th align="right">ph值</th>
+     <th align="right">悬浮物(mg/L)</th>
+
 <!--     <th align="right">风速</th>-->
 
-     <th align="right">运行时间(h)</th>
-     <th align="right">设备状态</th>
+
+     <th align="right">水质状态</th>
      <th align="right">异常原因</th>
  </tr>
 
 
-       {% for itemvalue,num in datavalue.items%}
-    <tr>
-<!--        <td-->
-  <td align="left">{{itemvalue}}</td>
 
-
-
-        {% for item in num%}
-          <td align="right">{{item}}</td>
-
-
-             {% endfor %}
-
-
-
-<!--  <td align="right">正常</td>-->
-
-
-
-     {% endfor %}
-</tr>
-
-
-                <tr>
-<!--        <td-->
-  <td align="left">水泵机</td>
+  <td align="left">2.0</td>
 
 <!--               '水泵机':['40','X','0','X','220','10','100','20','20','正常','无']}-->
 
 
+          <td align="right">20</td>
 
-          <td align="right" style="background-color:red;">100</td>
+          <td align="right">0.4</td>
 <!--          <td align="right">100</td>-->
-                    <td align="right">X</td>
-                    <td align="right">0</td>
-                    <td align="right">X</td>
-                    <td align="right">220</td>
+                    <td align="right">7</td>
                     <td align="right">10</td>
+                    <td align="right">正常</td>
+                    <td align="right">无</td>
 
-                    <td align="right">100</td>
-                    <td align="right">20</td>
-                    <td align="right">20</td>
-                    <td align="right" style="background-color:red;">异常</td>
-                    <td align="right" >电机温度过高</td>
+
+
 
 
 

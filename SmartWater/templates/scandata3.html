@@ -1,0 +1,443 @@
+<!doctype html>
+{% load static %}
+<html>
+<head>
+
+<meta charset="utf-8">
+<meta name="author"/>
+<title>水务信息平台</title>
+
+</head>
+<style>
+
+
+html,body{
+
+    width:100%;
+
+    height:100%;
+
+     margin:0px;
+     background-image:url(../static/images/bg6.jpg);
+     background-repeat:no-repeat;
+
+
+}
+
+
+}
+
+    div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size:25px;
+
+}
+
+
+
+
+h1{
+
+text-align:center;
+
+}
+
+th{
+
+
+background-color: #FFCCCC
+
+}
+
+
+
+
+.b1 {
+  position: absolute;
+  left: 1040px;
+  top: 700px;
+   font-size:20px
+
+}
+
+.b2 {
+  position: absolute;
+  left: 1240px;
+  top: 700px;
+    font-size:20px
+
+}
+
+.b3 {
+  position: absolute;
+  left: 1440px;
+  top: 700px;
+    font-size:20px
+
+}
+.b4 {
+  position: absolute;
+  left: 1540px;
+  top: 700px;
+    font-size:20px
+
+}
+
+select{
+
+    font-size:20px
+
+}
+th{
+width:110px;
+text-align:center;
+}
+
+td{
+text-align:center;
+
+}
+
+
+
+
+</style>
+<body style="background-color:#87CEFA">
+
+
+<h1 style="margin-bottom:0;" >环境状态</h1>
+<br>
+<br>
+<!--<div id="menu" style="background-color:#FFD700;height:500px;width:400px;float:left;">-->
+
+<div id="menu" style="height:500px;width:200px;float:left;background-color:	#6495ED">
+<select id="select" multiple="true" size="20" form="false" style="width:200px;background-color:	#5F9EA0">
+    <optgroup label="第一分中心">
+        <option  onclick="f1();" value="Internet Explorer">文翔名苑水泵站</option>
+        <option onclick="f2();" value="Firefox">开源新都水泵站</option>
+    </optgroup>
+    <optgroup label="第二分中心">
+        <option  onclick="f3();"value="Internet Explorer">久耕小区水泵站</option>
+        <option onclick="f4();"value="Firefox">凯虹家园水泵站</option>
+    </optgroup>
+
+        <optgroup label="第三分中心">
+        <option onclick="f5();"value="Internet Explorer">银欣花苑水泵站</option>
+        <option onclick="f6();"value="Firefox">海伦新苑水泵站</option>
+            <option onclick="f7();"value="Firefox">虹口花园水泵站</option>
+   </optgroup>
+
+
+<!--    <option value="Chrome">Chrome</option>-->
+<!--    <option value="Opera">Opera</option>-->
+
+</select>
+
+</div>
+<div id="content" width="800">
+        <table width="1000" height="100" border="1" id="tab1" style="table-layout:fixed;background-color:#6495ED;display:none">
+ <tr>
+      <th align="left">设备ID</th>
+         <th align="right">数值</th>
+
+  <th align="right">设备类型</th>
+     <th align="right">设备电量</th>
+
+  <th align="right">设备状态</th>
+ </tr>
+
+
+
+<!--{% for item in dataid%}-->
+<!--  <tr>-->
+<!--  <td align="left">{{item}}</td>-->
+<!--&lt;!&ndash;       <td align="right">温度传感器</td>&ndash;&gt;-->
+<!--&lt;!&ndash;          <td align="right">80%</td>&ndash;&gt;-->
+<!--     {% endfor %}-->
+<!-- </tr>-->
+<!--&lt;!&ndash;            <tr>&ndash;&gt;-->
+
+       {% for itemvalue,num in datavalue.items%}
+    <tr>
+<!--        <td-->
+  <td align="left">{{itemvalue}}</td>
+
+
+
+        {% for item in num%}
+          <td align="right">{{item}}</td>
+
+
+             {% endfor %}
+
+
+
+
+
+     {% endfor %}
+</tr>
+
+
+
+<!--<td>-->
+
+<!--      <tr>设备ID</tr>-->
+<!--  <tr>设备类型</tr>-->
+
+<!--</td>-->
+
+
+
+
+
+
+<!--<form action="/create-post/" method="post">-->
+<!--        {% csrf_token %}-->
+
+<!--        <tr align="center">-->
+<!--        <td>任务名</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--        <td>执行人</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--        <td>创建时间</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--        <td>截止时间</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--        <td>任务状态</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--        <td>任务描述</td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+
+<!--    </tr>-->
+<!--&lt;!&ndash;        <input type="text" name="hazy_task_name">&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="text" name="hazy_task_person">&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="text" name="hazy_task_createtime">&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="text" name="hazy_task_endtime">&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="text" name="hazy_task_status">&ndash;&gt;-->
+<!--&lt;!&ndash;        <input type="text" name="hazy_task_describe">&ndash;&gt;-->
+<!--        <input type="submit" name='select' value="刷新">-->
+
+
+<!--    </form>-->
+
+<!--    {% for line in ctx %}-->
+
+<!--    <tr>-->
+<!--&lt;!&ndash;        <td>{{line.model_task_name}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td>{{line.model_task_person}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td>{{line.model_task_createtime}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td>{{line.model_task_endtime}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td>{{line.model_task_}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td>{{line.model_task_status}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <td>{{line.model_task_describe}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;        <br/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <table cellpadding="0" cellspacing="0">&ndash;&gt;-->
+<!--        <td>{{line.task_name}}</td>-->
+<!--           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--        <td>{{line.task_person}}</td>-->
+<!--            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--        <td>{{line.task_createtime}}</td>-->
+<!--            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--        <td>{{line.task_endtime}}</td>-->
+<!--            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--        <td>{{line.task_status}}</td>-->
+<!--            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--        <td>{{line.task_describe}}</td>-->
+
+<!--&lt;!&ndash;            </table>&ndash;&gt;-->
+<!--        <br/>-->
+
+<!--    </tr>-->
+<!--    {% endfor %}-->
+
+
+<!-- <tr>-->
+<!--  <th align="left">总计</th>-->
+<!--  <th align="right">$1001.50</th>-->
+<!--  <th align="right">$744.65</th>-->
+<!-- </tr>-->
+
+
+
+
+
+
+
+
+
+</table>
+
+<br>
+<br><br><br>
+
+    <button type="button" class="b1">点击下载表格</button>
+
+<button type="button" class="b2">点击打印表格</button>
+
+<button type="button" class="b3">刷新</button>
+
+<button onclick="window.location.href='../SW/index'" type="button" class="b4">返回</button>
+
+</div>
+
+
+
+
+<!--<table border=1 id="tab1">-->
+<!--<tr>-->
+<!--<td>最初显示</td>-->
+<!--</tr>-->
+<!--</table>-->
+<!--<table border=1 id="tab2" style="display:none">-->
+<!--<tr>-->
+<!--<td>最初隐藏</td>-->
+<!--</tr>-->
+<!--</table>-->
+<br>
+<!--<input type="button" onclick="f1();" value="切换" />-->
+
+
+</body>
+
+<script type="text/javascript">
+function f1(){
+var tab1=document.getElementById("tab1");
+<!--var tab2=document.getElementById("tab2");-->
+<!--var tab3=document.getElementById("tab3");-->
+<!--var tab4=document.getElementById("tab4");-->
+<!--var tab5=document.getElementById("tab5");-->
+<!--var tab6=document.getElementById("tab6");-->
+<!--var tab7=document.getElementById("tab7");-->
+tab1.style.display = '';
+<!--tab2.style.display = 'none';-->
+<!--tab3.style.display = 'none';-->
+<!--tab4.style.display = 'none';-->
+<!--tab5.style.display = 'none';-->
+<!--tab6.style.display = 'none';-->
+<!--tab7.style.display = 'none';-->
+
+
+
+}
+
+function f2(){
+
+var tab1=document.getElementById("tab1");
+var tab2=document.getElementById("tab2");
+var tab3=document.getElementById("tab3");
+var tab4=document.getElementById("tab4");
+var tab5=document.getElementById("tab5");
+var tab6=document.getElementById("tab6");
+var tab7=document.getElementById("tab7");
+
+tab2.style.display = '';
+tab1.style.display = 'none';
+tab3.style.display = 'none';
+tab4.style.display = 'none';
+tab5.style.display = 'none';
+tab6.style.display = 'none';
+tab7.style.display = 'none';
+
+}
+
+function f3(){
+
+
+
+var tab1=document.getElementById("tab1");
+var tab2=document.getElementById("tab2");
+var tab3=document.getElementById("tab3");
+var tab4=document.getElementById("tab4");
+var tab5=document.getElementById("tab5");
+var tab6=document.getElementById("tab6");
+var tab7=document.getElementById("tab7");
+
+tab3.style.display = '';
+tab2.style.display = 'none';
+tab1.style.display = 'none';
+tab4.style.display = 'none';
+tab5.style.display = 'none';
+tab6.style.display = 'none';
+tab7.style.display = 'none';
+}
+function f4(){
+
+
+
+var tab1=document.getElementById("tab1");
+var tab2=document.getElementById("tab2");
+var tab3=document.getElementById("tab3");
+var tab4=document.getElementById("tab4");
+var tab5=document.getElementById("tab5");
+var tab6=document.getElementById("tab6");
+var tab7=document.getElementById("tab7");
+
+tab4.style.display = '';
+tab2.style.display = 'none';
+tab3.style.display = 'none';
+tab1.style.display = 'none';
+tab5.style.display = 'none';
+tab6.style.display = 'none';
+tab7.style.display = 'none';
+}
+function f5(){
+
+
+
+var tab1=document.getElementById("tab1");
+var tab2=document.getElementById("tab2");
+var tab3=document.getElementById("tab3");
+var tab4=document.getElementById("tab4");
+var tab5=document.getElementById("tab5");
+var tab6=document.getElementById("tab6");
+var tab7=document.getElementById("tab7");
+
+tab5.style.display = '';
+tab2.style.display = 'none';
+tab3.style.display = 'none';
+tab4.style.display = 'none';
+tab1.style.display = 'none';
+tab6.style.display = 'none';
+tab7.style.display = 'none';
+}
+function f6(){
+
+
+var tab1=document.getElementById("tab1");
+var tab2=document.getElementById("tab2");
+var tab3=document.getElementById("tab3");
+var tab4=document.getElementById("tab4");
+var tab5=document.getElementById("tab5");
+var tab6=document.getElementById("tab6");
+var tab7=document.getElementById("tab7");
+
+tab6.style.display = '';
+tab2.style.display = 'none';
+tab3.style.display = 'none';
+tab4.style.display = 'none';
+tab5.style.display = 'none';
+tab1.style.display = 'none';
+tab7.style.display = 'none';
+}
+function f7(){
+
+
+var tab1=document.getElementById("tab1");
+var tab2=document.getElementById("tab2");
+var tab3=document.getElementById("tab3");
+var tab4=document.getElementById("tab4");
+var tab5=document.getElementById("tab5");
+var tab6=document.getElementById("tab6");
+var tab7=document.getElementById("tab7");
+
+tab7.style.display = '';
+tab2.style.display = 'none';
+tab3.style.display = 'none';
+tab4.style.display = 'none';
+tab5.style.display = 'none';
+tab6.style.display = 'none';
+tab1.style.display = 'none';
+}
+
+
+
+</script>
+
+
+
+</html>

@@ -1,0 +1,287 @@
+<html>
+   <head>
+
+
+    </head>
+
+
+       <style type="text/css">
+
+
+<!-- body {-->
+<!--        margin:0px;-->
+<!--&lt;!&ndash;     background-image:url(../static/images/bg1.jpg);&ndash;&gt;-->
+<!--&lt;!&ndash;     background-repeat:no-repeat;&ndash;&gt;-->
+<!--        background: #87CEEB;-->
+
+
+<!--&lt;!&ndash;     width:1920px;&ndash;&gt;-->
+<!--}-->
+
+
+
+body {
+     margin:0px;
+          background-image:url(../static/images/bg6.jpg);
+     background-repeat:no-repeat;
+
+
+}
+
+
+
+  .t{
+    text-align: center;
+    line-height: 90px;
+    font-size: 40px;
+<!--         align:"center";-->
+         }
+        .top{
+            /* 设置宽度高度背景颜色 */
+            height: 50px;
+            width:100%;
+<!--            background:rgb(90, 186, 67);-->
+            background:	rgb(70,130,180);
+            position: fixed; /*固定在顶部*/
+            top: 100px;/*离顶部的距离为0*/
+        }
+        .top ul{
+            /* 清除ul标签的默认样式 */
+            width: 80%;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+
+        }
+        .top li {
+            float:left; /* 使li内容横向浮动，即横向排列  */
+            margin-right:50px;  /* 两个li之间的距离*/
+        }
+
+        .top li a{
+           /* 设置链接内容显示的格式*/
+            display: block; /* 把链接显示为块元素可使整个链接区域可点击 */
+            color:white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none; /* 去除下划线 */
+        }
+        .top li a:hover{
+            /* 鼠标选中时背景变为黑色 */
+            background-color: #111;
+        }
+
+
+
+        .top ul li ul{
+            /* 设置二级菜单 */
+            width: auto;
+            background:rgb(90, 186, 67);
+            position: absolute;
+            display: none; /* 默认隐藏二级菜单的内容 */
+
+        }
+        .top ul li ul li{
+            /* 二级菜单li内容的显示 */
+            margin-right:0;
+            float:none;
+            text-align: center;
+        }
+        .top ul li:hover ul{
+            /* 鼠标选中二级菜单内容时 */
+            display: block;
+        }
+
+
+        canvas{
+        width:600px;
+        height:300px;
+        }
+
+
+
+
+        .wrapper {
+
+
+  position: absolute;
+  left: 185px;
+  top: 160px;
+
+
+            /* 转化元素类型 */
+            display: grid;
+            /* 设置网格的间隙 */
+            grid-gap: 40px;
+            /* 设置每列的尺寸 */
+            grid-template-columns: repeat(2, 1fr);
+<!--            background: rgb(255, 150, 150);-->
+        }
+
+
+       </style>
+        <body>
+
+   <h1 class="t">安保状态</h1>
+            <div class="top">
+                   <center>
+                    <ul>
+                    <li><a href="#" onclick="funShowClose()">实时预览</a></li>
+                    <li><a href="#">视频回放</a>
+<!--                        <ul>-->
+<!--                            <li><a href="#">成员简介</a></li>-->
+<!--&lt;!&ndash;                            <li><a href="#">已完成任务</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <li><a href="#">当前任务</a></li>&ndash;&gt;-->
+
+<!--                        </ul>-->
+                      </li>
+
+                        <li><a href="#">出入人员记录</a></li>
+
+<!--                    <li>-->
+<!--                        <a href="#">设备列表</a>-->
+<!--                        <ul>-->
+<!--                            <li><a href="#" onclick="javascrtpt:window.location.href='http://127.0.0.1:8000/led'">灯</a>-->
+<!--&lt;!&ndash;                        <ul>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <li><a href="#">开</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <li><a href="#">关</a></li>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                        </ul>&ndash;&gt;-->
+<!--                          </li>-->
+<!--                            <li><a href="#">门</a></li>-->
+<!--                            <li><a href="#">空调</a></li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+
+                      <li><a href="#">摄像头设置</a></li>
+
+                      <li><a href="#" onclick="window.location.href='../SW/index'">返回</a></li>
+
+
+
+
+<!--                        <li><a href="#">产品</a>-->
+<!--                                                <ul>-->
+<!--                            <li><a href="#" onclick="javascrtpt:window.location.href='http://127.0.0.1:8000/product'">产品介绍</a></li>-->
+<!--                            <li><a href="#">资产清单</a></li>-->
+
+<!--                        </ul> </li>-->
+
+
+
+                      </ul>
+                    </center>
+            </div>
+
+   <br/><br/><br/>
+              {% load static %}
+<!--<img src="{% static '1.jpg' %}"  alt="3D打印机"width="200" height="100"/>-->
+
+<!--        <canvas id="myCanvas" align=left style="display:block">your browser does not support the canvas tag </canvas>-->
+
+<!--        <canvas id="myCanvas1" align=left style="display:block">your browser does not support the canvas tag </canvas>-->
+<!--        <canvas id="myCanvas2" align=right valign="top" style="display:block">your browser does not support the canvas tag </canvas>-->
+<!--        <canvas id="myCanvas3" align=right valign="top" style="display:block">your browser does not support the canvas tag </canvas>-->
+
+
+
+
+            <div class="wrapper" align="center">
+<!--        <div class="col">1</div>-->
+<!--        <div class="col">2</div>-->
+<!--        <div class="col">3</div>-->
+<!--        <div class="col">4</div>-->
+<!--        <div class="col">13</div>-->
+<!--        <div class="col span6">14</div>-->
+<!--        <div class="col span3">15</div>-->
+<!--        <div class="col span2">16</div>-->
+                <canvas id="myCanvas" style="display:none">your browser does not support the canvas tag </canvas>
+
+        <canvas id="myCanvas1"  style="display:none">your browser does not support the canvas tag </canvas>
+        <canvas id="myCanvas2"  style="display:none">your browser does not support the canvas tag </canvas>
+        <canvas id="myCanvas3"  style="display:none">your browser does not support the canvas tag </canvas>
+
+    </div>
+
+
+        </body>
+
+<script>
+
+
+var canvas=document.getElementById('myCanvas');
+var ctx=canvas.getContext('2d');
+<!--ctx.fillStyle='#FF0000';-->
+ctx.fillRect(0,0,500,500);
+ctx.font = 'bold 10px Arial';
+ctx.textAlign = 'left';
+ctx.textBaseline = 'bottom';
+ctx.fillStyle = '#ccc';
+<!--ctx.strokeText("摄像头1", 150, 100);-->
+ctx.fillText("摄像头1", 250, 140);
+
+
+
+
+
+
+var canvas1=document.getElementById('myCanvas1');
+var ctx1=canvas1.getContext('2d');
+<!--ctx.fillStyle='#FF0000';-->
+ctx1.fillRect(0,0,500,500);
+ctx1.font = 'bold 10px Arial';
+ctx1.textAlign = 'left';
+ctx1.textBaseline = 'bottom';
+ctx1.fillStyle = '#ccc';
+<!--ctx.strokeText("摄像头2", 150, 100);-->
+ctx1.fillText("摄像头2", 250, 140);
+
+
+
+
+
+var canvas2=document.getElementById('myCanvas2');
+var ctx2=canvas2.getContext('2d');
+<!--ctx.fillStyle='#FF0000';-->
+ctx2.fillRect(0,0,500,500);
+ctx2.font = 'bold 10px Arial';
+ctx2.textAlign = 'left';
+ctx2.textBaseline = 'bottom';
+ctx2.fillStyle = '#ccc';
+<!--ctx.strokeText("摄像头1", 150, 100);-->
+ctx2.fillText("摄像头3", 250, 140);
+
+
+var canvas3=document.getElementById('myCanvas3');
+var ctx3=canvas3.getContext('2d');
+<!--ctx.fillStyle='#FF0000';-->
+ctx3.fillRect(0,0,500,500);
+ctx3.font = 'bold 10px Arial';
+ctx3.textAlign = 'left';
+ctx3.textBaseline = 'bottom';
+ctx3.fillStyle = '#ccc';
+<!--ctx.strokeText("摄像头1", 150, 100);-->
+ctx3.fillText("摄像头4", 250, 140);
+
+
+
+function funShowClose(){
+        //var btnShowClose = document.getElementById("tabShowClose").style.display="none";
+        if(document.getElementById("myCanvas").style.display=="none"){
+            document.getElementById("myCanvas").style.display="block";
+            document.getElementById("myCanvas1").style.display="block";
+            document.getElementById("myCanvas2").style.display="block";
+            document.getElementById("myCanvas3").style.display="block";
+
+        }else{
+            document.getElementById("myCanvas").style.display="none";
+            document.getElementById("myCanvas1").style.display="none";
+            document.getElementById("myCanvas2").style.display="none";
+            document.getElementById("myCanvas3").style.display="none";
+        }
+    }
+
+
+</script>
+</html>
